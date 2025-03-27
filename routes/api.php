@@ -157,8 +157,5 @@ Route::post('/admin/chi-tiet-phan-quyen/data', [ChiTietPhanQuyenController::clas
 Route::post('/admin/chi-tiet-phan-quyen/delete', [ChiTietPhanQuyenController::class, 'xoaChiTietQuyen'])->middleware("nhanVienMiddle");
 
 Route::get('/search', [SearchController::class, 'search']);
-
-
-
 Route::post('/khach-hang/khoa-hoc/dang-ki', [KhachHangController::class, 'dangKiKhoaHoc']);
 
