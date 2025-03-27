@@ -175,4 +175,13 @@ class KhoaHocFreeController extends Controller
             ]);
         }
     }
+
+    public function getdataKH()
+    {
+        $data = KhoaHocFree::get();
+        return response()->json([
+            'data' => $data
+        ]);
+    }
+
 }

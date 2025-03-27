@@ -7,6 +7,7 @@ use App\Http\Requests\upDateLoaiKhoaHocRequest;
 use App\Http\Requests\XoaLoaiKhoaHocRequest;
 use App\Models\BaiHoc;
 use App\Models\ChiTietPhanQuyen;
+use App\Models\KhoaHocFree;
 use App\Models\LoaiKhoaHoc;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -61,7 +62,17 @@ class LoaiKhoaHocController extends Controller
             'data'  => $data
         ]);
     }
-    
+
+    public function getDataKH()
+    {
+        $data = LoaiKhoaHoc::get();
+        $data_2 = KhoaHocFree::get();
+        return response()->json([
+            'data'  => $data,
+            'data_2' => $data_2
+        ]);
+    }
+
     public function destroy(XoaLoaiKhoaHocRequest $request)
     {
         $id_chuc_nang = 21; //Xóa loại khóa học

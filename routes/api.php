@@ -96,6 +96,7 @@ Route::post('/admin/loai-khoa-hoc/create', [LoaiKhoaHocController::class, 'store
 Route::post('/admin/loai-khoa-hoc/delete', [LoaiKhoaHocController::class, 'destroy'])->middleware("nhanVienMiddle");
 Route::post('/admin/loai-khoa-hoc/update', [LoaiKhoaHocController::class, 'update'])->middleware("nhanVienMiddle");
 Route::get('/admin/loai-khoa-hoc/data', [LoaiKhoaHocController::class, 'getData'])->middleware("nhanVienMiddle");
+Route::get('/khach-hang/loai-khoa-hoc/data', [LoaiKhoaHocController::class, 'getDataKH']);
 Route::post('/admin/loai-khoa-hoc/change-status', [LoaiKhoaHocController::class, 'changeStatus'])->middleware("nhanVienMiddle");
 Route::post('/admin/loai-khoa-hoc/tim-kiem', [LoaiKhoaHocController::class, 'search'])->middleware("nhanVienMiddle");
 
@@ -106,6 +107,7 @@ Route::post('/admin/khoa-hoc-free/delete', [KhoaHocFreeController::class, 'destr
 Route::post('/admin/khoa-hoc-free/tim-kiem', [KhoaHocFreeController::class, 'search'])->middleware("nhanVienMiddle");
 Route::post('/admin/khoa-hoc-free/change-status', [KhoaHocFreeController::class, 'changeStatus'])->middleware("nhanVienMiddle");
 Route::get('/admin/khoa-hoc-free/data', [KhoaHocFreeController::class, 'getdata'])->middleware("nhanVienMiddle");
+Route::get('/khach-hang/khoa-hoc-free/data', [KhoaHocFreeController::class, 'getdataKH']);
 Route::get('/khoa-hoc-free/data-open', [KhoaHocFreeController::class, 'getdataOpen']);
 
 // Khach Hang
@@ -155,4 +157,8 @@ Route::post('/admin/chi-tiet-phan-quyen/data', [ChiTietPhanQuyenController::clas
 Route::post('/admin/chi-tiet-phan-quyen/delete', [ChiTietPhanQuyenController::class, 'xoaChiTietQuyen'])->middleware("nhanVienMiddle");
 
 Route::get('/search', [SearchController::class, 'search']);
-    
+
+
+
+Route::post('/khach-hang/khoa-hoc/dang-ki', [KhachHangController::class, 'dangKiKhoaHoc']);
+

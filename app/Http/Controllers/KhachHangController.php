@@ -8,8 +8,10 @@ use App\Http\Requests\KhachHangDoiMatKhauRequest;
 use App\Http\Requests\layThongTinProfileRequest;
 use App\Http\Requests\upDateKhachHangRequest;
 use App\Http\Requests\XoaKhachHangRequest;
+use App\Models\ChiTietKhoaHocFree;
 use App\Models\ChiTietPhanQuyen;
 use App\Models\KhachHang;
+use App\Models\KhoaHocFree;
 use App\Models\TaiChinh;
 use Google_Client;
 use Illuminate\Http\Request;
@@ -17,6 +19,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Response;
@@ -510,6 +513,31 @@ class KhachHangController extends Controller
                 'message' => 'Lỗi: ' . $e->getMessage()
             ], 400);
         }
+    }
+
+    public function dangKiKhoaHoc(Request $request)
+    {
+        $user = Auth::guard('sanctum')->user();
+
+        // Kiểm tra khóa học có tồn tại không
+        $khoaHoc = KhoaHocFree::find($request->id_khoa_hoc);
+        if (!$khoaHoc) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Không tìm thấy khóa học'
+            ]);
+        }
+
+        // Nếu chưa đăng ký, tạo bản ghi mới
+        ChiTietKhoaHocFree::updateOrcreate([
+            'id_khoa_hoc'   => $request->id_khoa_hoc,
+            'id_khach_hang' => $user->id,
+        ]);
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Đăng ký khóa học thành công'
+        ]);
     }
 
 }
