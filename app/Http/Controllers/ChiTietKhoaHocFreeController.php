@@ -62,9 +62,11 @@ class ChiTietKhoaHocFreeController extends Controller
             $data = ChiTietKhoaHocFree::join('khoa_hoc_frees', 'khoa_hoc_frees.id', '=', 'chi_tiet_khoa_hoc_free.id_khoa_hoc')
                 ->where('chi_tiet_khoa_hoc_free.id_khach_hang', $user->id)
                 ->select(
+                    'khoa_hoc_frees.id',           
                     'khoa_hoc_frees.title',
+                    'khoa_hoc_frees.slug',         
                     'khoa_hoc_frees.image',
-                    'khoa_hoc_frees.is_free', 
+                    'khoa_hoc_frees.is_free',
                     'chi_tiet_khoa_hoc_free.created_at'
                 )
                 ->get();

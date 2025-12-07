@@ -48,7 +48,7 @@ class NhanVienSeeder extends Seeder
             [
                 'email'             =>  'minhthien@gmail.com',
                 'password'          =>  '123456',
-                'ho_va_ten'         =>  'trần Minh Thiện',
+                'ho_va_ten'         =>  'Trần Minh Thiện',
                 'so_dien_thoai'     =>  '0388824332',
                 'dia_chi'           =>  'Đà Nẵng',
                 'tinh_trang'        =>  1,

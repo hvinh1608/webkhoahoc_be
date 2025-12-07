@@ -86,11 +86,11 @@ class TaiChinhController extends Controller
     {
         try {
             $payload = [
-                "USERNAME" => "0335446435",
-                "PASSWORD" => "Lethikimngoc3@",
-                "DAY_BEGIN" => "13/4/2025",
-                "DAY_END" => "26/4/2025",
-                "NUMBER_MB" => "56700112233"
+                // "USERNAME" => "Nhập sđt đăng ký MB",
+                // "PASSWORD" => "Nhập mật khẩu đăng ký MB",
+                // "DAY_BEGIN" => "Nhâp ngày bắt đầu, định dạng YYYYMMDD",
+                // "DAY_END" => "Nhập ngày kết thúc, định dạng YYYYMMDD",
+                // "NUMBER_MB" => "Nhập số tài khoản MB"
             ];
             $axios = new \GuzzleHttp\Client();
             $responsive = $axios->post('https://api-mb.dzmid.io.vn/api/transactions', [
