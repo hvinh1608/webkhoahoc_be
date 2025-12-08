@@ -32,7 +32,7 @@ class KhachHang extends Authenticatable
         'onboarding_purpose',
         'onboarding_workplace',
         'onboarding_experience',
-        'onboarding_age',
+        'onboarding_interest',
         'avatar',
     ];
 

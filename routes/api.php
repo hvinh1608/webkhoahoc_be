@@ -145,6 +145,8 @@ Route::post('/khach-hang/quen-mat-khau', [KhachHangController::class, 'resultPas
 Route::post('/khach-hang/doi-mat-khau', [KhachHangController::class, 'changePassword']);
 Route::get('/khach-hang/lay-thong-tin-profile', [KhachHangController::class, 'layThongTinProfile']);
 Route::post('/khach-hang/thay-doi-thong-tin-profile', [KhachHangController::class, 'thaydoiProfile']);
+Route::post('/khach-hang/update-profile-complete', [KhachHangController::class, 'updateProfileComplete']);
+Route::get('/khach-hang/check-profile-complete', [KhachHangController::class, 'checkProfileComplete']);
 Route::post('/khach-hang/thay-doi-avatar', [KhachHangController::class, 'thayDoiAvatar']);
 Route::post('/khach-hang/doi-mat-khau-profile', [KhachHangController::class, 'changePasswordProfile']);
 Route::post('/khach-hang/lay-so-du', [KhachHangController::class, 'laySoDu']);

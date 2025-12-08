@@ -25,8 +25,8 @@ class layThongTinProfileRequest extends FormRequest
             'id'            => 'required|exists:khach_hangs,id',
             'ho_va_ten'     => 'required|min:3|max:50',
             'email'         => 'required|email|unique:khach_hangs,email,' . $this->id . 'id,',
-            'so_dien_thoai' => 'required|digits:10',
-            'ngay_sinh'     => 'required|date|before_or_equal:today'
+            'so_dien_thoai' => 'nullable|digits:10',
+            'ngay_sinh'     => 'nullable|date|before_or_equal:today'
         ];
     }
     public function messages(): array

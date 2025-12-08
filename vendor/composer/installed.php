@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '2648fc2e2d84b2d767cd5dbb31ea221b26e67dc0',
+        'reference' => 'fc5316e80081a282c4db36db42aca6c656a8c852',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -460,7 +460,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '2648fc2e2d84b2d767cd5dbb31ea221b26e67dc0',
+            'reference' => 'fc5316e80081a282c4db36db42aca6c656a8c852',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -733,6 +733,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'paragonie/sodium_compat' => array(
+            'pretty_version' => 'v2.4.0',
+            'version' => '2.4.0.0',
+            'reference' => '547e2dc4d45107440e76c17ab5a46e4252460158',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../paragonie/sodium_compat',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'phar-io/manifest' => array(
             'pretty_version' => '2.0.4',
             'version' => '2.0.4.0',
@@ -919,8 +928,8 @@
         'psr/http-client-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0',
-                1 => '*',
+                0 => '*',
+                1 => '1.0',
             ),
         ),
         'psr/http-factory' => array(
@@ -935,8 +944,8 @@
         'psr/http-factory-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0',
-                1 => '*',
+                0 => '*',
+                1 => '1.0',
             ),
         ),
         'psr/http-message' => array(
@@ -951,8 +960,8 @@
         'psr/http-message-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0',
-                1 => '*',
+                0 => '*',
+                1 => '1.0',
             ),
         ),
         'psr/log' => array(
@@ -992,6 +1001,15 @@
             'reference' => 'd73fa3c74918ef4522bb8a3bf9cab39161c4b57c',
             'type' => 'library',
             'install_path' => __DIR__ . '/../psy/psysh',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'pusher/pusher-php-server' => array(
+            'pretty_version' => '7.2.7',
+            'version' => '7.2.7.0',
+            'reference' => '148b0b5100d000ed57195acdf548a2b1b38ee3f7',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../pusher/pusher-php-server',
             'aliases' => array(),
             'dev_requirement' => false,
         ),

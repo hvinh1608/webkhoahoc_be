@@ -36,8 +36,8 @@ class AuthController extends Controller
                 'ho_va_ten' => $githubUser->getName() ?? $githubUser->getNickname(),
                 'email' => $githubUser->getEmail(),
                 'password' => bcrypt(uniqid()),
-                'so_dien_thoai' => '',
-                'ngay_sinh' => '1990-01-01',
+                'so_dien_thoai' => null,
+                'ngay_sinh' => null,
                 'is_active' => 1,
                 'is_first_login' => true,
                 'provider' => 'github'
@@ -90,8 +90,8 @@ class AuthController extends Controller
                 'ho_va_ten' => $fbUser->getName(),
                 'email' => $fbUser->getEmail(),
                 'password' => bcrypt(uniqid()),
-                'so_dien_thoai' => '',
-                'ngay_sinh' => '1990-01-01',
+                'so_dien_thoai' => null,
+                'ngay_sinh' => null,
                 'is_active' => 1,
                 'is_first_login' => true,
                 'provider' => 'facebook'
@@ -151,8 +151,8 @@ class AuthController extends Controller
                 'ho_va_ten' => $name,
                 'email' => $email,
                 'password' => bcrypt(Str::random(16)),
-                'so_dien_thoai' => '',
-                'ngay_sinh' => '1990-01-01',
+                'so_dien_thoai' => null,
+                'ngay_sinh' => null,
                 'is_active' => 1,
                 'is_first_login' => true,
                 'provider' => 'google'
@@ -210,8 +210,8 @@ class AuthController extends Controller
                 'ho_va_ten' => $name,
                 'email' => $email,
                 'password' => bcrypt(Str::random(16)),
-                'so_dien_thoai' => '',
-                'ngay_sinh' => '1990-01-01',
+                'so_dien_thoai' => null,
+                'ngay_sinh' => null,
                 'is_active' => 1,
                 'is_first_login' => true,
                 'provider' => 'dribbble'

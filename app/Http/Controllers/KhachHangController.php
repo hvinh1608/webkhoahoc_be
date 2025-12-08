@@ -410,6 +410,32 @@ class KhachHangController extends Controller
             ]);
         }
     }
+
+    public function updateProfileComplete(Request $request)
+    {
+        $user = Auth::guard('sanctum')->user();
+        if ($user && $user instanceof \App\Models\KhachHang) {
+            $request->validate([
+                'so_dien_thoai' => 'required|string|max:20',
+                'ngay_sinh' => 'required|date'
+            ]);
+
+            $user->so_dien_thoai = $request->so_dien_thoai;
+            $user->ngay_sinh = $request->ngay_sinh;
+            $user->save();
+
+            return response()->json([
+                'status'  => 1,
+                'message' => "Cập nhật thông tin thành công",
+            ]);
+        } else {
+            return response()->json([
+                'status'  => 0,
+                'message' => "Có lỗi xảy ra",
+            ]);
+        }
+    }
+
     public function layThongTinProfile()
     {
         $user = Auth::guard('sanctum')->user();
@@ -427,6 +453,26 @@ class KhachHangController extends Controller
             ]);
         }
     }
+
+    public function checkProfileComplete()
+    {
+        $user = Auth::guard('sanctum')->user();
+        if ($user && $user instanceof \App\Models\KhachHang) {
+            $isComplete = $user->so_dien_thoai !== null && $user->ngay_sinh !== null;
+            return response()->json([
+                'status'  => 1,
+                'is_complete' => $isComplete,
+                'so_dien_thoai' => $user->so_dien_thoai,
+                'ngay_sinh' => $user->ngay_sinh,
+            ]);
+        } else {
+            return response()->json([
+                'status'  => 0,
+                'message' => "Có lỗi xảy ra",
+            ]);
+        }
+    }
+
     public function thaydoiProfile(layThongTinProfileRequest $request)
     {
         $user = Auth::guard('sanctum')->user();
